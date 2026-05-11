@@ -68,10 +68,13 @@ Fake_news/
 │   └── vectorizer.pkl
 │
 └── screenshots/
-Screenshots
-Frontend
+# Screenshots
 
-API Testing
+![Results](screenshots/img1.png)
+
+## API Testing
+
+!(screenshots/img2.png)
 
 Dataset
 
