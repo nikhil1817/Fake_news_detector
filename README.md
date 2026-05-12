@@ -47,12 +47,22 @@ The model was trained on a large-scale fake news dataset containing thousands of
 
 ```text
 98.89%
-Classification Report
+```
+
+## Classification Report
+
+```text
               precision    recall  f1-score   support
 
         FAKE       0.99      0.99      0.99
         REAL       0.98      0.99      0.99
-Project Structure
+```
+
+---
+
+# Project Structure
+
+```text
 Fake_news/
 │
 ├── app.py
@@ -68,74 +78,143 @@ Fake_news/
 │   └── vectorizer.pkl
 │
 └── screenshots/
+    ├── img1.png
+    └── img2.png
+```
+
+---
+
 # Screenshots
 
-![Results](screenshots/img1.png)
+## Frontend
+
+![Frontend](screenshots/img1.png)
 
 ## API Testing
 
-!(screenshots/img2.png)
+![API Testing](screenshots/img2.png)
 
-Dataset
+---
+
+# Dataset
 
 This project uses a large-scale fake news dataset containing:
-
-Fake news articles
-Real news articles
+- Fake news articles
+- Real news articles
 
 Dataset files:
+- `Fake.csv`
+- `True.csv`
 
-Fake.csv
-True.csv
-Installation
-Clone repository
+---
+
+# Installation
+
+## Clone repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 cd Fake_news
-Create virtual environment
+```
+
+---
+
+## Create virtual environment
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
-Install dependencies
+```
+
+---
+
+## Install dependencies
+
+```bash
 pip install -r requirements.txt
-Train the Model
+```
+
+---
+
+# Train the Model
+
+```bash
 python3 train_model.py
+```
 
 This generates:
 
+```text
 models/fake_news_model.pkl
 models/vectorizer.pkl
-Run Backend
+```
+
+---
+
+# Run Backend
+
+```bash
 uvicorn app:app --reload
+```
 
 Backend runs on:
 
+```text
 http://127.0.0.1:8000
+```
 
 API Docs:
 
+```text
 http://127.0.0.1:8000/docs
-Run Frontend
+```
+
+---
+
+# Run Frontend
 
 Open a new terminal:
 
+```bash
 cd Fake_news
 source venv/bin/activate
 streamlit run frontend.py
+```
 
 Frontend runs on:
 
+```text
 http://localhost:8501
-API Endpoint
-POST /predict
-Request
+```
+
+---
+
+# API Endpoint
+
+## POST `/predict`
+
+### Request
+
+```json
 {
   "text": "Aliens secretly control world governments"
 }
-Response
+```
+
+### Response
+
+```json
 {
   "prediction": "FAKE",
   "confidence": 0.98
 }
-How It Works
+```
+
+---
+
+# How It Works
+
+```text
 User Input
     ↓
 Frontend (Streamlit)
@@ -147,12 +226,23 @@ TF-IDF Vectorization
 Logistic Regression Prediction
     ↓
 Prediction Returned
-Future Improvements
-BERT / Transformer-based classification
-Explainable AI (SHAP/LIME)
-News source credibility scoring
-Database integration
-Docker deployment
-AWS deployment
-User authentication
-Real-time fact-checking APIs
+```
+
+---
+
+# Future Improvements
+
+- BERT / Transformer-based classification
+- Explainable AI (SHAP/LIME)
+- News source credibility scoring
+- Database integration
+- Docker deployment
+- AWS deployment
+- User authentication
+- Real-time fact-checking APIs
+
+---
+
+# Resume Description
+
+Built a scalable Fake News Detection system using FastAPI, Streamlit, and scikit-learn, trained on 40k+ news articles using TF-IDF vectorization and Logistic Regression, achieving ~99% classification accuracy.
